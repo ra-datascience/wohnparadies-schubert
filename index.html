@@ -1,13 +1,135 @@
-<!-- Neugenerierung -->
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuck you, Leute!</title>
+    <title>Wohnparadies Schubert - Luxushotel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(to bottom, #a52a2a, #800000);
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            text-align: center;
+        }
+        .sidebar a {
+            display: block;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #fff;
+        }
+        .sidebar a:hover {
+            background-color: #660000;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: calc(100% - 270px);
+        }
+        .tab-content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .event-section {
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .event-section a {
+            color: #ffcc00;
+        }
+    </style>
 </head>
-<body style="text-align: center; font-family: Arial, sans-serif;">
-    <h1>Haha, erwischt! 😆</h1>
-    <p></p>
-    <img src="https://i.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.webp" alt="Lachender Smiley">
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Wohnparadies Schubert</h2>
+            <a href="#" onclick="showTab('anfahrt')">Anfahrt</a>
+            <a href="#" onclick="showTab('schlafsaele')">Schlafsäle</a>
+            <a href="#" onclick="showTab('werbung')">Werbung</a>
+            <a href="#" onclick="showTab('events')">Magic-Events</a>
+            <a href="#" onclick="showTab('gallery')">Bisherige Erscheinungen</a>
+        </div>
+        
+        <div class="content">
+            <div id="anfahrt" class="tab-content active">
+                <h1>Anfahrt</h1>
+                <p>Adresse: Neuendettelsauer Str. 33, 90449 Nürnberg</p>
+                <p>Reservierung: +49 1234 56789 | Email: luxury@wohnparadies.de</p>
+                <p>Öffnungszeiten: 24/7</p>
+                <img src="https://www.google.de/maps/vt/data=neuendettelsauer" alt="Karte" width="100%">
+            </div>
+            
+            <div id="schlafsaele" class="tab-content">
+                <h1>Unsere luxuriösen Schlafsäle</h1>
+                <p>Erleben Sie Luxus auf höchstem Niveau.</p>
+                <img src="https://cdn2.thecatapi.com/images/MTc4MzQ1NQ.jpg" alt="Katzenzimmer" width="100%">
+            </div>
+            
+            <div id="werbung" class="tab-content">
+                <h1>Werbebereich</h1>
+                <p>Hier könnte Ihre Werbung stehen!</p>
+                <img src="https://i.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.webp" alt="Trump Meme" width="100%">
+            </div>
+            
+            <div id="events" class="tab-content">
+                <h1>Magic: The Gathering Events</h1>
+                <div class="event-section">
+                    <h2>Nächstes Event</h2>
+                    <p><strong>Foundations Draft</strong> - Sonntag, 23.02.2025 ab 10:30 Uhr</p>
+                    <p>Zutritt nur mit abgegebener Stimme zur Bundestagswahl</p>
+                    <a href="https://magic.wizards.com/de/products/foundations">Mehr Infos hier</a>
+                </div>
+            </div>
+            
+            <div id="gallery" class="tab-content">
+                <h1>Bisherige Erscheinungen</h1>
+                <div class="gallery">
+                    <img src="https://placekitten.com/150/200" alt="Karte 1">
+                    <img src="https://placekitten.com/151/201" alt="Karte 2">
+                    <img src="https://placekitten.com/152/202" alt="Karte 3">
+                    <img src="https://placekitten.com/153/203" alt="Karte 4">
+                    <img src="https://placekitten.com/154/204" alt="Karte 5">
+                    <img src="https://placekitten.com/155/205" alt="Karte 6">
+                    <img src="https://placekitten.com/156/206" alt="Karte 7">
+                    <img src="https://placekitten.com/157/207" alt="Karte 8">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
