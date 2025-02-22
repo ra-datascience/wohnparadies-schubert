@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wohnparadies Schubert - Luxushotel</title>
     <style>
+        /* Allgemeine Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,9 +16,11 @@
         .container {
             display: flex;
         }
+
+        /* Sidebar */
         .sidebar {
             width: 250px;
-            background: linear-gradient(to bottom, #a52a2a, #800000);
+            background: linear-gradient(to bottom, #b22222, #8b0000);
             padding: 20px;
             height: 100vh;
             position: fixed;
@@ -25,6 +28,7 @@
         }
         .sidebar h2 {
             text-align: center;
+            color: gold;
         }
         .sidebar a {
             display: block;
@@ -32,10 +36,13 @@
             padding: 10px;
             text-decoration: none;
             border-bottom: 1px solid #fff;
+            transition: 0.3s;
         }
         .sidebar a:hover {
             background-color: #660000;
         }
+
+        /* Inhaltsbereich */
         .content {
             margin-left: 270px;
             padding: 20px;
@@ -47,24 +54,29 @@
         .active {
             display: block;
         }
+
+        /* Bild-Galerien */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
+            padding: 10px;
         }
         .gallery img {
             width: 100%;
             height: auto;
             border-radius: 8px;
         }
+
+        /* Event-Abschnitte */
         .event-section {
             background: #222;
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 20px;
         }
-        .event-section a {
-            color: #ffcc00;
+        .event-section h2 {
+            color: gold;
         }
         .event-section img {
             width: 100%;
@@ -81,100 +93,68 @@
             <a href="#" onclick="showTab('schlafsaele')">Schlafsäle</a>
             <a href="#" onclick="showTab('werbung')">Werbung</a>
             <a href="#" onclick="showTab('events')">Magic-Events</a>
-            <a href="#" onclick="showTab('cards')">Neuerscheinungen Magic</a>
-            </div>
-        
+            <a href="#" onclick="showTab('gallery')">Bisherige Erscheinungen</a>
+        </div>
+
         <div class="content">
+            <!-- Anfahrt -->
             <div id="anfahrt" class="tab-content active">
                 <h1>Anfahrt</h1>
                 <p>Adresse: Neuendettelsauer Str. 33, 90449 Nürnberg</p>
                 <p>Reservierung: +49 1234 56789 | Email: luxury@wohnparadies.de</p>
-                <p>Öffnungszeiten: Montag bis Freitag 00:00 bis 23:59, 7 Tage die Woche (auch Feiertags). Abzüglich aller Atbeitszeiten und Rufbereitschaften für Assistenzärzte. Was in der Praxis bedeutet, jeden 29. Februar zwischen 07:59 und 08:01 (Warteschleife am Telefon beträgt mindestens 10 Minuten).</p>
-                <p>Geokoordinaten: 49.41935095757767, 11.030767188907257
-                <p>Wegbeschreibung: Direkt an der U-Bahn-Station Nürnberg Röthenbach oder mit dem Auto über die A73 erreichbar. Ausgang Neuendettelsauer Str. nehmen und dann dem Geruch von Katzenpisse folgen. Bei Schubert / Kohl klingeln.</p>
-                <p>Routenplanung: https://www.google.de/maps/vt/data=neuendettelsauer</p>
+                <p>Öffnungszeiten: 24/7</p>
                 <iframe 
                     width="100%" 
                     height="400" 
                     frameborder="0" 
                     style="border:0" 
                     allowfullscreen 
-                    src="https://www.google.de/maps/place/Neuendettelsauer+Str.+33,+90449+N%C3%BCrnberg/@49.4192149,11.0282513,570m/data=!3m1!1e3!4m6!3m5!1s0x479f56cf5ad5f5bf:0x13086a77fd0fe51b!8m2!3d49.4192114!4d11.0308262!16s%2Fg%2F11c5kps1hr?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D">
+                    src="https://www.google.com/maps/embed/v1/place?q=Neuendettelsauer+Str.+33,+90449+Nürnberg&key=DEIN_GOOGLE_MAPS_API_KEY">
                 </iframe>
-                src="https://www.google.de/maps/vt/data=neuendettelsauer" alt="Karte" width="100%">
-                        </div>
-                <div id="schlafsaele" class="tab-content">
+            </div>
+
+            <!-- Schlafsäle -->
+            <div id="schlafsaele" class="tab-content">
                 <h1>Unsere luxuriösen Schlafsäle</h1>
                 <div class="gallery">
-                    <div>
-                        <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/refs/heads/main/zi-suite.jpeg" alt="Suite 1">
-                        <p>Unsere Luxussuite bieten Komfort nach allerhöchsten Maßstäben. Nur das Beste für unsere Gäste!</p>
-                    </div>
-                    <div>
-                        <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/refs/heads/main/zisuite02.jpeg" alt="Suite 2">
-                        <p>Ein geräumiger, lichtdurchfluteter Wohn- und Schlafbereich zur Südseite hin mit Balkon zum Park, ausgestattet mit einem sehr bequemen Boxspringbett zum Liebemachen (nur für Eheleute und eingetragene Partnerschaften) lässt keine Wünsche offen.</p>
-                    </div>
-                    <div>
-                        <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/refs/heads/main/zisuite3.jpeg" alt="Suite 3">
-                        <p>Privatsuite mit 88-Zoll LCD-Flachbildfernseher (auf Anfrage auch mit Zugriff auf den Männerkanal erhältlich. Option "vor der Ehefrau geheimhalten"-Funktion mit verfügbar. Sprechen Sie uns an.</p>
-                    </div>
-                    <div>
-                        <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/refs/heads/main/zi1.jpeg" alt="Prüdes Zimmer">
-                        <p>Unverheiratete oder prüde Menschen können auch jeweils ihr eigenes Bett haben. Auf Wunsch ist ein Sicht- und Gehörschutz zubuchbar. Sprechen Sie uns an.</p>
-                    </div>
-                    <div>
-                        <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/refs/heads/main/pool.jpeg" alt="Pool">
-                        <p>Sehr gut entspannen lässt es sich in unserem Pool. Na, noch genug floating Mana für einen Counterspell übrig?</p>
-                    </div>
-                    <div>
-                        <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/refs/heads/main/flooded.jpeg" alt="Flooded">
-                        <p>Auch mit nur 16 Ländern pro Deck sind unsere Gäste manchmal flooded. Buchen Sie hierfür unsere Tableflip-Option gratis hinzu (s. nächstes Bild).</p>
-                    </div>
-                    <div>
-                        <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/refs/heads/main/table-flip.gif" alt="Flip">
-                    </div>
-                    </div>
+                    <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/main/zi-suite.jpeg" alt="Suite 1">
+                    <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/main/zisuite02.jpeg" alt="Suite 2">
+                    <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/main/zi1.jpeg" alt="Doppelzimmer">
+                    <img src="https://raw.githubusercontent.com/ra-datascience/wohnparadies-schubert/main/pool.jpeg" alt="Luxus-Pool">
+                </div>
             </div>
-            
+
+            <!-- Werbung -->
+            <div id="werbung" class="tab-content">
+                <h1>Werbebereich</h1>
+                <p>Hier könnte Ihre Werbung stehen!</p>
+                <img src="https://i.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.webp" alt="Trump Meme" width="300px">
+            </div>
+
+            <!-- Magic Events -->
             <div id="events" class="tab-content">
                 <h1>Magic: The Gathering Events</h1>
                 <div class="event-section">
                     <h2>Spielmodus</h2>
-                    <p>Das Turnier beginnt um 10.30, 8 Spieler sind zugelassen. (Wer zu spät kommt wird geschlagen, wer nicht gewählt hat kommt gar nicht erst rein.) Das Turnier beginnt mit einem Draft, bei dem die 8 Spieler durch den Spielleiter @Tommynator ihren billigen Plätzen zufällig zugelost werden. Jeder Spieler erhält 4 Booster, Weitergabe im Modus links / rechts / links /rechts. Der Spielleiter behält sich vor, ein Zeitlimit für das Ziehen der Karten zu setzen, falls der Zeitplan anderenfalls gefährdet wird. Anschließend wird etwas Zeit für den Deckbuild eingeräumt (eigene Basic Lands und Hüllen nicht vergessen, ein Verleih vor Ort kann nicht garantiert werden!). Der Spielleiter erstellt einen Spielplan mit Best-of-1 sowie eine zweite Runde, bei dem Spieler nach Spielergebnis (bisherige Wins und Punkte) mit ähnlich erfolgreichen Spielern gepairt werden. Die Anzahl der Spiele der zweiten Runde ist zeitabhängig und wird nicht vorab festgelegt. Sobald der Spielplan kommuniziert ist und der Deckbuild abgeschlossen, findet eine Kräftigung mit einem Get-Together statt (bitte eigenes Essen mitbringen, Snacks zum Teilen gerne gesehen). Anschließend geht es ans Eingemachte. Ist dein Build stark genug, um mit dem Rekordmeister Max S. mitzuhalten? (Strengt Euch an Leute, sonst wird das echt eintönig auf Dauer ;~)). NOCH FRAGEN?</p>
+                    <p>8 Spieler, Draft, 4 Booster pro Spieler. Deckbuild-Zeit vorhanden. Spielmodus: Best-of-1.</p>
                 </div>
                 <div class="event-section">
                     <h2>Zu gewinnende Preise</h2>
-                    <p>Die verbliebenen Preisbooster werden von einer vom Spielleiter ernannten Glücksfee nach Ranking verteilt (Plätze 1 bis 3, Plätze 4 bis 8 gehen leider leer aus. Alle Spieler dürfen ihre gezogenen Karten entsprechend des gezahlten Preisgelds behalten oder sie weiter veräußern.</p>
+                    <p>Die Top 3 erhalten Booster-Packs.</p>
                 </div>
                 <div class="event-section">
                     <h2>Bestenliste</h2>
-                    <p>Die aktuelle Rangliste unserer Magic-Champions:
-                    1. M. S. 
-                    2. Tommynator 
-                    3. Happy
-                    4. ...
-                    5. ...
-                    6. ...
-                    7. ...
-                    8. Pike (sorry, du warst einfach nicht oft genug da >.<)</p>
-                </div>
-                <div class="event-section">
-                    <h2>Bisherige Eindrücke und Erfahrungen</h2>
-                    <img src="event_foto.jpg" alt="Event Impressionen">
-                    <p>Unser letztes Turnier war ein voller Erfolg.</p>
+                    <p>1. M. S. | 2. Tommynator | 3. Happy</p>
                 </div>
             </div>
 
+            <!-- Bisherige Erscheinungen -->
             <div id="gallery" class="tab-content">
                 <h1>Bisherige Erscheinungen</h1>
                 <div class="gallery">
                     <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%20der%20Lachs%20(1).png" alt="Max der Lachs">
                     <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max_%20Beer%20Jesus.png" alt="Max, Beer Jesus">
                     <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%20the%20Indomitable.png" alt="Max the Indomitable">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max_%20True%20Guardian%20(2).png" alt="Max, True Guardian">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%2C%20Trustworthy%20Doctor.png" alt="Max, Trustworthy Doctor">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%2C%20Flying%20Medicist.png" alt="Max, Flying Medicist">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%2C%20Brutal%20Annihilator.png" alt="Max, Brutal Annihilator">
                 </div>
             </div>
         </div>
