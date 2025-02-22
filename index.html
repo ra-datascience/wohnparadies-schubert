@@ -1,4 +1,4 @@
-<!-- Test -->
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -6,18 +6,30 @@
     <title>Wohnparadies Schubert - Luxushotel</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
             background-color: #111;
             color: #fff;
+        }
+        .header {
+            background: url('https://source.unsplash.com/1600x900/?luxury,hotel') center/cover no-repeat;
+            height: 300px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: gold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
         .container {
             display: flex;
         }
         .sidebar {
             width: 250px;
-            background: linear-gradient(to bottom, #a52a2a, #800000);
+            background: linear-gradient(to bottom, #8B0000, #A52A2A);
             padding: 20px;
             height: 100vh;
             position: fixed;
@@ -25,21 +37,26 @@
         }
         .sidebar h2 {
             text-align: center;
+            color: gold;
         }
         .sidebar a {
             display: block;
             color: #fff;
-            padding: 10px;
+            padding: 12px;
             text-decoration: none;
-            border-bottom: 1px solid #fff;
+            border-bottom: 1px solid gold;
+            transition: all 0.3s;
         }
         .sidebar a:hover {
             background-color: #660000;
+            color: gold;
         }
         .content {
             margin-left: 270px;
-            padding: 20px;
+            padding: 30px;
             width: calc(100% - 270px);
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
         }
         .tab-content {
             display: none;
@@ -63,42 +80,45 @@
             border-radius: 8px;
         }
         .event-section a {
-            color: #ffcc00;
+            color: gold;
+        }
+        .gif-container img {
+            width: 50%;
+            height: auto;
         }
     </style>
 </head>
 <body>
+    <div class="header">Willkommen im Wohnparadies Schubert</div>
     <div class="container">
         <div class="sidebar">
-            <h2>Wohnparadies Schubert</h2>
+            <h2>Navigation</h2>
             <a href="#" onclick="showTab('anfahrt')">Anfahrt</a>
             <a href="#" onclick="showTab('schlafsaele')">Schlafsäle</a>
             <a href="#" onclick="showTab('werbung')">Werbung</a>
             <a href="#" onclick="showTab('events')">Magic-Events</a>
             <a href="#" onclick="showTab('gallery')">Bisherige Erscheinungen</a>
         </div>
-        
         <div class="content">
             <div id="anfahrt" class="tab-content active">
                 <h1>Anfahrt</h1>
                 <p>Adresse: Neuendettelsauer Str. 33, 90449 Nürnberg</p>
                 <p>Reservierung: +49 1234 56789 | Email: luxury@wohnparadies.de</p>
                 <p>Öffnungszeiten: 24/7</p>
-                <img src="https://www.google.de/maps/vt/data=neuendettelsauer" alt="Karte" width="100%">
+                <iframe src="https://www.google.com/maps/embed?..." width="100%" height="400" frameborder="0"></iframe>
             </div>
-            
             <div id="schlafsaele" class="tab-content">
                 <h1>Unsere luxuriösen Schlafsäle</h1>
-                <p>Erleben Sie Luxus auf höchstem Niveau.</p>
-                <img src="https://cdn2.thecatapi.com/images/MTc4MzQ1NQ.jpg" alt="Katzenzimmer" width="100%">
+                <p>Entspannen Sie in einer unvergleichlichen Atmosphäre.</p>
+                <img src="https://source.unsplash.com/800x500/?luxury,bedroom" alt="Luxuszimmer" width="100%">
             </div>
-            
             <div id="werbung" class="tab-content">
                 <h1>Werbebereich</h1>
                 <p>Hier könnte Ihre Werbung stehen!</p>
-                <img src="https://i.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.webp" alt="Trump Meme" width="100%">
+                <div class="gif-container">
+                    <img src="https://i.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.webp" alt="Trump Meme">
+                </div>
             </div>
-            
             <div id="events" class="tab-content">
                 <h1>Magic: The Gathering Events</h1>
                 <div class="event-section">
@@ -108,22 +128,16 @@
                     <a href="https://magic.wizards.com/de/products/foundations">Mehr Infos hier</a>
                 </div>
             </div>
-            
             <div id="gallery" class="tab-content">
                 <h1>Bisherige Erscheinungen</h1>
                 <div class="gallery">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%20der%20Lachs%20(1).png" alt="Max der Lachs">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max_%20Beer%20Jesus.png" alt="Max, Beer Jesus">
+                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%20der%20Lachs.png" alt="Max der Lachs">
+                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%20Beer%20Jesus.png" alt="Max, Beer Jesus">
                     <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%20the%20Indomitable.png" alt="Max the Indomitable">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max_%20True%20Guardian%20(2).png" alt="Max, True Guardian">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%2C%20Trustworthy%20Doctor.png" alt="Max, Trustworthy Doctor">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%2C%20Flying%20Medicist.png" alt="Max, Flying Medicist">
-                    <img src="https://github.com/ra-datascience/wohnparadies-schubert/raw/main/Max%2C%20Brutal%20Annihilator.png" alt="Max, Brutal Annihilator">
                 </div>
             </div>
         </div>
     </div>
-    
     <script>
         function showTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
